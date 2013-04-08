@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastEasyPizza", "FastEasyPizza\FastEasyPizza.csproj", "{62F24ACD-BB30-4BFA-9926-3B5CF5EEECC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{62F24ACD-BB30-4BFA-9926-3B5CF5EEECC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F24ACD-BB30-4BFA-9926-3B5CF5EEECC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62F24ACD-BB30-4BFA-9926-3B5CF5EEECC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,8 @@
+*.ReSharper.user
+*.suo
+desktop.ini
+_ReSharper*
+obj/
+bin/
+*.user
+

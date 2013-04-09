@@ -1,9 +1,13 @@
-﻿@model dynamic
+﻿@using System.Web.Mvc.Html
+@model Dto.OrderDto
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Create Your Order";
 }
 
-<h2>Fast Easy Pizza</h2>
+<h2>Fast Easy Pizza order form</h2>
 
-Please place your order
+@using(Html.BeginForm()){
+@Html.EditorForModel()
+<input type="submit" value="Order"/>
+}

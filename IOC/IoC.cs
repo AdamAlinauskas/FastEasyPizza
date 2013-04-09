@@ -1,3 +1,5 @@
+using DataAccess;
+using Service;
 using StructureMap;
 
 namespace IOC {
@@ -5,7 +7,9 @@ namespace IOC {
         public static StructureMap.IContainer Initialize() {
             ObjectFactory.Initialize(x => x.Scan(scan =>
                 {
-                    scan.TheCallingAssembly();
+                    scan.Assembly(typeof(OrderTask).Assembly);
+                    scan.Assembly(typeof(OrderRepository).Assembly);
+                    scan.Assembly(typeof(OrderRepository).Assembly);
                     scan.WithDefaultConventions();
                 }));
             return ObjectFactory.Container;

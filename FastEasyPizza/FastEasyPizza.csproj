@@ -154,13 +154,21 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Dtos\Dto.csproj">
+      <Project>{A5135D4A-3DF5-4E5F-B2A3-F77AACD1B512}</Project>
+      <Name>Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IOC\IOC.csproj">
       <Project>{9DA2924E-512F-4585-83FF-14D27C6C22CF}</Project>
       <Name>IOC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{F9C2A91B-837B-4BBD-ABF1-F8D7D39420DB}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Order\ThankYou.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

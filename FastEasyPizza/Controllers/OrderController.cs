@@ -1,5 +1,7 @@
 ﻿using System.Web.Mvc;
+using DataAccess;
 using Dto;
+using NHibernate;
 using Service;
 
 namespace FastEasyPizza.Controllers
@@ -19,6 +21,9 @@ namespace FastEasyPizza.Controllers
 
         public ActionResult Index()
         {
+            var sessionFactory = new DatabaseSessionFactory();
+            var session = sessionFactory.Create();
+
             return View(new OrderDto());
         }
 

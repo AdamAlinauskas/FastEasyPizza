@@ -44,10 +44,11 @@ namespace DataAccess
         ISessionFactory createSessionFactory()
         {
            // CreateDatabase();
-
+            
             return  Fluently.Configure()
                 .Database(MsSqlCeConfiguration.Standard.ConnectionString(connectionString))
-                .Mappings(x => x.AutoMappings.Add(AutoMap.AssemblyOf<IEntity>()))
+                .Mappings(x => x.AutoMappings.Add(
+                    AutoMap.AssemblyOf<IEntity>().UseOverridesFromAssembly(typeof(DatabaseSessionFactory).Assembly)))
                 .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
         }

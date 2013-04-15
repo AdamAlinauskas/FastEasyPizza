@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAddPizzaCommand.cs" />
     <Compile Include="PizzaQuery.cs" />
     <Compile Include="PizzaTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

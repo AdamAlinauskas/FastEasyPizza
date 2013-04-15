@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using DataAccess;
-using Dto;
 using System.Linq;
+using Dto;
 
 namespace Service
 {
     public interface IPizzaQuery
     {
-        IEnumerable<PizzaDto> AllPizzas();
+        IEnumerable<PizzaListingDto> AllPizzas();
     }
 
     public class PizzaQuery : IPizzaQuery
@@ -19,9 +19,9 @@ namespace Service
             this.pizzaRepository = pizzaRepository;
         }
 
-        public IEnumerable<PizzaDto> AllPizzas()
+        public IEnumerable<PizzaListingDto> AllPizzas()
         {
-            return pizzaRepository.All().Select(x => new PizzaDto{Name = x.Name,Price = x.Price, Id = x.Id});
+            return pizzaRepository.All().Select(x => new PizzaListingDto{Name = x.Name,Price = x.Price, Id = x.Id});
         }
     }
 }

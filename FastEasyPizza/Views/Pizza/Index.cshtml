@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Dto.PizzaDto>
+﻿@model IEnumerable<Dto.PizzaListingDto>
 
 @{
     ViewBag.Title = "Create Pizza";
@@ -6,5 +6,16 @@
 
 <h2>Pizza</h2>
 
+@Html.ActionLink("Add Pizza","AddEditPizza")
+
 @Html.DisplayForModel()
+
+<table >
+    <thead><tr><th>Name</th><th>Price</th></tr></thead>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Name</td><td>@item.Price</td></tr>
+    }
+</table>
+
 

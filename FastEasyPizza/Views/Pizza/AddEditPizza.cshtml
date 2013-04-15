@@ -1,0 +1,13 @@
+﻿@model Dto.PizzaDto
+
+@{
+    ViewBag.Title = "Add Pizza";
+}
+
+<h2>Add Pizza</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Save"/>
+}

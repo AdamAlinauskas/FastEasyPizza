@@ -9,6 +9,7 @@ namespace DataAccess
     public interface IPizzaRepository
     {
         IEnumerable<Pizza> All();
+        Pizza Save(Pizza pizza);
     }
 
     public class PizzaRepository : IPizzaRepository
@@ -20,11 +21,10 @@ namespace DataAccess
             this.unitOfWork = unitOfWork;
         }
 
-        public void Save(Pizza pizza)
+        public Pizza Save(Pizza pizza)
         {
-            
-                unitOfWork.Session.Save(pizza);
-             
+            unitOfWork.Session.Save(pizza);
+            return pizza;
         }
 
         public IEnumerable<Pizza> FindAllPizzas()

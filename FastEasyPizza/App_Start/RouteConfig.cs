@@ -16,7 +16,7 @@ namespace FastEasyPizza
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Order", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Pizza", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

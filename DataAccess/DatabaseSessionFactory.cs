@@ -7,12 +7,18 @@ using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 
 namespace DataAccess
 {
-    public class DatabaseSessionFactory
+    public interface IDatabaseSessionFactory
     {
-        private ISessionFactory sessionFactory;
+        ISession Create();
+    }
+
+    public class DatabaseSessionFactory : IDatabaseSessionFactory
+    {
+        private static ISessionFactory sessionFactory;
         private static readonly object lockObject = new object();
         private static string connectionString;
 
@@ -37,12 +43,26 @@ namespace DataAccess
 
         ISessionFactory createSessionFactory()
         {
-            CreateDatabase();
+           // CreateDatabase();
 
             return  Fluently.Configure()
                 .Database(MsSqlCeConfiguration.Standard.ConnectionString(connectionString))
                 .Mappings(x => x.AutoMappings.Add(AutoMap.AssemblyOf<IEntity>()))
+                .ExposeConfiguration(BuildSchema)
                 .BuildSessionFactory();
+        }
+
+        private static void BuildSchema(NHibernate.Cfg.Configuration config)
+        {
+            // delete the existing db on each run
+            if (File.Exists(Path.Combine(AppDomain.CurrentDomain.GetData("DataDirectory").ToString(), "FastEasyPizza.sdf")))
+                File.Delete(Path.Combine(AppDomain.CurrentDomain.GetData("DataDirectory").ToString(), "FastEasyPizza.sdf"));
+            
+            CreateDatabase();
+
+            // this NHibernate tool takes a configuration (with mapping info in)
+            // and exports a database schema from it
+            new SchemaExport(config).Create(true, true);
         }
 
         private static void CreateDatabase()

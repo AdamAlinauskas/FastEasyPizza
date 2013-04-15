@@ -120,8 +120,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\UnitOfWorkActionFilter.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PizzaController.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyResolver.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
     <Compile Include="Global.asax.cs">
@@ -154,7 +155,7 @@
     <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\layout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />
@@ -163,6 +164,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{bd86ff9c-2cc8-484a-809b-87a330d6d59d}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{E8A53515-9BC2-4BC6-BB64-19E61D181A1F}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Dtos\Dto.csproj">
       <Project>{A5135D4A-3DF5-4E5F-B2A3-F77AACD1B512}</Project>
@@ -179,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Order\ThankYou.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Pizza\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,11 +3,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" media="screen">
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="blah" class="">Admin</a></li>
+                    <li class=""><a href="blah" class="">Order</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">@RenderBody()</div>
+        </div>
     </div>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 </body>
 </html>

@@ -8,9 +8,7 @@
 
 @Html.ActionLink("Add Pizza","AddEditPizza")
 
-@Html.DisplayForModel()
-
-<table >
+<table class="table table-striped">
     <thead><tr><th>Name</th><th>Price</th></tr></thead>
     @foreach (var item in Model)
     {

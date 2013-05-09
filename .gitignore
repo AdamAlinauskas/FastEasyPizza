@@ -6,3 +6,4 @@ obj/
 bin/
 *.user
 
+FastEasyPizza/App_Data/FastEasyPizza.sdf
